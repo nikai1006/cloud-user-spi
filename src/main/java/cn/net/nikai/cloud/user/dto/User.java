@@ -2,6 +2,7 @@ package cn.net.nikai.cloud.user.dto;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 /**
  * User dto
@@ -28,6 +29,11 @@ public class User implements Serializable {
      * @dataType List<cn.net.nikai.cloud.user.dto.Card:卡片>:卡片信息
      */
     private List<Card> cards;
+
+    /**
+     * @dataType Map<String:标签, cn.net.nikai.cloud.user.dto.Friend:朋友信息>:朋友
+     */
+    private Map<String,Friend> friends;
 
 
     public long getId() {
@@ -62,6 +68,14 @@ public class User implements Serializable {
         this.cards = cards;
     }
 
+    public Map<String, Friend> getFriends() {
+        return friends;
+    }
+
+    public void setFriends(Map<String, Friend> friends) {
+        this.friends = friends;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -69,6 +83,7 @@ public class User implements Serializable {
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", cards=" + cards +
+                ", friends=" + friends +
                 '}';
     }
 }
