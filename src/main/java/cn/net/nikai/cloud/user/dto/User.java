@@ -14,6 +14,7 @@ public class User implements Serializable {
     private static final long serialVersionUID = 4944653477783174720L;
     /**
      * id primary key
+     * @required TRUE
      */
     private long id;
     /**

@@ -16,6 +16,7 @@ public class Friend implements Serializable{
 
     /**
      * 编号
+     * @required TRUE
      */
     private Integer id;
 

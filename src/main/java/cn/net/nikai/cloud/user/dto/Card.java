@@ -14,6 +14,7 @@ public class Card implements Serializable {
     private static final long serialVersionUID = 993491107111027592L;
     /**
      * id
+     * @required TRUE
      */
     private Long id;
 
