@@ -34,7 +34,7 @@
                     <subpackages>${my.package.value}</subpackages>
                     <show>private</show>
                     <nohelp>true</nohelp>
-                    <doclet>cn.net.nikai.api.doclet.SpiDoclet</doclet>
+                    <doclet>cn.net.nikai.api.doclet.SpiDocProcessor</doclet>
                     <docletArtifact>
                         <groupId>cn.net.nikai.auto-api</groupId>
                         <artifactId>api-doc-plugin</artifactId>
