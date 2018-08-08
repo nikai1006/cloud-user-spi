@@ -20,6 +20,7 @@ public class Friend implements Serializable{
      */
     private Integer id;
 
+
     /**
      * 姓名
      */

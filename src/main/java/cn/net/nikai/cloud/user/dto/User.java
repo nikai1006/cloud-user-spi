@@ -16,7 +16,7 @@ public class User implements Serializable {
      * id primary key
      * @required TRUE
      */
-    private long id;
+    private Long id;
     /**
      * name
      */
