@@ -27,12 +27,12 @@ public class User implements Serializable {
     private Integer age;
 
     /**
-     * @dataType List<cn.net.nikai.cloud.user.dto.Card:卡片>:卡片信息
+     * 用户卡片
      */
     private List<Card> cards;
 
     /**
-     * @dataType Map<String:标签, cn.net.nikai.cloud.user.dto.Friend:朋友信息>:朋友
+     * 用户的朋友
      */
     private Map<String,Friend> friends;
 
