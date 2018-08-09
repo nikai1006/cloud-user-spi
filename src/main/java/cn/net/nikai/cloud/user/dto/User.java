@@ -18,7 +18,9 @@ public class User implements Serializable {
      */
     private Long id;
     /**
-     * name
+     * <pre>
+     *     名字
+     * </pre>
      */
     private String name;
     /**
@@ -32,7 +34,9 @@ public class User implements Serializable {
     private List<Card> cards;
 
     /**
-     * 用户的朋友
+     * <pre>
+     *     用户的朋友
+     * </pre>
      */
     private Map<String,Friend> friends;
 
