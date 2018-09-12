@@ -13,47 +13,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
-    <spi.scan.base.packages>/:;url=http://localhost:18080/controller;app.name=${artifactId};redis.host=192.168.1.120;redis.port=6379</spi.scan.base.packages>
   </properties>
 
-  <profiles>
-  <profile>
-    <id>spi-doc</id>
-    <activation>
-      <activeByDefault>false</activeByDefault>
-    </activation>
-    <build>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-javadoc-plugin</artifactId>
-          <version>3.0.0-M1</version>
-          <executions>
-            <execution>
-              <phase>package</phase>
-              <goals>
-                <goal>javadoc</goal>
-              </goals>
-            </execution>
-          </executions>
-          <configuration>
-            <subpackages>${spi.scan.base.packages}</subpackages>
-            <show>private</show>
-            <nohelp>true</nohelp>
-            <doclet>cn.net.nikai.api.doclet.SpiDocProcessor</doclet>
-            <docletArtifact>
-              <groupId>cn.net.nikai.auto-api</groupId>
-              <artifactId>api-doc-plugin</artifactId>
-              <version>1.0.0-SNAPSHOT</version>
-            </docletArtifact>
-            <useStandardDocletOptions>false</useStandardDocletOptions>
-            <encoding>UTF-8</encoding>
-            <docencoding>UTF-8</docencoding>
-            <breakiterator>true</breakiterator>
-          </configuration>
-        </plugin>
-      </plugins>
-    </build>
-  </profile>
-  </profiles>
 </project>
