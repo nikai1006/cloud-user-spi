@@ -40,6 +40,10 @@ public class User implements Serializable {
      */
     private Map<String,Friend> friends;
 
+    /**
+     * 家人
+     */
+    private List<User> family;
 
     public long getId() {
         return id;
@@ -81,14 +85,23 @@ public class User implements Serializable {
         this.friends = friends;
     }
 
+    public List<User> getFamily() {
+        return family;
+    }
+
+    public void setFamily(List<User> family) {
+        this.family = family;
+    }
+
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", cards=" + cards +
-                ", friends=" + friends +
-                '}';
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", age=" + age +
+            ", cards=" + cards +
+            ", friends=" + friends +
+            ", family=" + family +
+            '}';
     }
 }

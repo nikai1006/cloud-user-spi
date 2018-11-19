@@ -2,6 +2,7 @@ package cn.net.nikai.cloud.user.dto;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 /**
  * cloud-user-spi cn.net.nikai.cloud.user.dto
@@ -36,6 +37,16 @@ public class Friend implements Serializable{
      */
     private Date brithday;
 
+    /**
+     * 老婆
+     */
+    private User wife;
+
+    /**
+     * 朋友
+     */
+    private List<Friend> friends;
+
     public Integer getId() {
         return id;
     }
@@ -68,13 +79,31 @@ public class Friend implements Serializable{
         this.brithday = brithday;
     }
 
+    public User getWife() {
+        return wife;
+    }
+
+    public void setWife(User wife) {
+        this.wife = wife;
+    }
+
+    public List<Friend> getFriends() {
+        return friends;
+    }
+
+    public void setFriends(List<Friend> friends) {
+        this.friends = friends;
+    }
+
     @Override
     public String toString() {
         return "Friend{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", brithday=" + brithday +
-                '}';
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", address='" + address + '\'' +
+            ", brithday=" + brithday +
+            ", wife=" + wife +
+            ", friends=" + friends +
+            '}';
     }
 }
