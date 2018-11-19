@@ -43,7 +43,7 @@
               <subpackages>${spi.scan.base.packages}:;${javadoc.option.params}</subpackages>
               <show>private</show>
               <nohelp>true</nohelp>
-              <doclet>org.and.api.doclet.SpiDocProcessor</doclet>
+              <doclet>org.and.api.doclet.ModelProcessor</doclet>
               <docletArtifact>
                 <groupId>org.and.api</groupId>
                 <artifactId>api-doc-plugin</artifactId>
