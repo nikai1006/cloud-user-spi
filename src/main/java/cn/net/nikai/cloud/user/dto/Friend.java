@@ -11,6 +11,7 @@ import java.util.List;
  * @Description:
  * @Date: Create in 17:56 2018/8/4
  * @Modified By:
+ * @ignore
  */
 public class Friend implements Serializable{
     private static final long serialVersionUID = -1510197852310149126L;
@@ -18,6 +19,7 @@ public class Friend implements Serializable{
     /**
      * 编号
      * @required TRUE
+     * @unique AUTO_INCREMENT
      */
     private Integer id;
 
@@ -43,9 +45,29 @@ public class Friend implements Serializable{
     private User wife;
 
     /**
+     * 个人邮箱
+     * @email
+     * @min 5
+     * @max 200
+     * @fomat email
+     */
+    private String email;
+
+    /**
      * 朋友
      */
     private List<Friend> friends;
+
+    public Friend() {
+    }
+
+    public Friend(Integer id, String name, String address, Date brithday, String email) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.brithday = brithday;
+        this.email = email;
+    }
 
     public Integer getId() {
         return id;

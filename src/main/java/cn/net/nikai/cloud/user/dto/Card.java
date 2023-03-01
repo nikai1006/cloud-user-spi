@@ -5,16 +5,15 @@ import java.io.Serializable;
 /**
  * cloud-user-spi cn.net.nikai.cloud.user.dto
  *
- * @author: nikai
- * @Description:
- * @Date: Create in 17:20 2018/8/4
- * @Modified By:
+ * @author nikai
+ * @ignore
  */
 public class Card implements Serializable {
     private static final long serialVersionUID = 993491107111027592L;
     /**
      * id
      * @required TRUE
+     * @primary AUTO_INCREMENT
      */
     private Long id;
 
@@ -24,6 +23,8 @@ public class Card implements Serializable {
     private String name;
     /**
      * 电话号码
+     * @min 8
+     * @max 20
      */
     private String tel;
 
@@ -41,6 +42,18 @@ public class Card implements Serializable {
      * 卡类型
      */
     private String type;
+
+    public Card() {
+    }
+
+    public Card(Long id, String name, String tel, String company, Boolean free, String type) {
+        this.id = id;
+        this.name = name;
+        this.tel = tel;
+        this.company = company;
+        this.free = free;
+        this.type = type;
+    }
 
     public Long getId() {
         return id;

@@ -1,6 +1,9 @@
 package cn.net.nikai.cloud.user.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -8,12 +11,14 @@ import java.util.Map;
  * User dto
  *
  * @author nikai
+ * @ignore
  */
 public class User implements Serializable {
 
     private static final long serialVersionUID = 4944653477783174720L;
     /**
      * id primary key
+     *
      * @required TRUE
      */
     private Long id;
@@ -21,15 +26,39 @@ public class User implements Serializable {
      * <pre>
      *     名字
      * </pre>
+     *
+     * @min 2
+     * @max 20
      */
     private String name;
+
     /**
-     * age
+     * 生日
+     * @required
+     */
+    @JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date birthday;
+    /**
+     * 年龄
+     *
+     * @required
+     * @min 18
+     * @max 150
      */
     private Integer age;
 
     /**
+     * 邮箱
+     *
+     * @format email
+     */
+    private String email;
+
+    /**
      * 用户卡片
+     *
+     * @min 0
+     * @max 30
      */
     private List<Card> cards;
 
@@ -38,12 +67,24 @@ public class User implements Serializable {
      *     用户的朋友
      * </pre>
      */
-    private Map<String,Friend> friends;
+    private Map<String, Friend> friends;
 
     /**
      * 家人
      */
     private List<User> family;
+
+    private Wife wife;
+
+    public User() {
+    }
+
+    public User(Long id, String name, Integer age, String email) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.email = email;
+    }
 
     public long getId() {
         return id;
@@ -93,6 +134,14 @@ public class User implements Serializable {
         this.family = family;
     }
 
+    public Wife getWife() {
+        return wife;
+    }
+
+    public void setWife(Wife wife) {
+        this.wife = wife;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -102,6 +151,7 @@ public class User implements Serializable {
             ", cards=" + cards +
             ", friends=" + friends +
             ", family=" + family +
+            ", wife=" + wife +
             '}';
     }
 }
