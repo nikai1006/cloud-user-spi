@@ -10,7 +10,6 @@ import java.util.Date;
  *
  * @author chenfanglin
  * @date: 2018年7月19日 下午4:13:09
- * @ignore
  */
 public class CompanyBase {
 

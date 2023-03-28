@@ -11,7 +11,6 @@ import java.util.Map;
  * User dto
  *
  * @author nikai
- * @ignore
  */
 public class User implements Serializable {
 
