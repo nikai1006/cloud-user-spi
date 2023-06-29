@@ -1,5 +1,8 @@
 package cn.net.nikai.cloud.user.dto;
 
+/**
+ * @unignore
+ */
 public class BusinessNodeDto extends BusinessDto{
 
     /**

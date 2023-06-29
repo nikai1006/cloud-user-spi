@@ -2,6 +2,9 @@ package cn.net.nikai.cloud.user.dto;
 
 import org.and.api.base.spi.ServiceApi;
 
+/**
+ * @unignore
+ */
 public class CallBackExt extends ServiceApi {
 
     /**

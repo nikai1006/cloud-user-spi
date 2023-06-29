@@ -11,6 +11,7 @@ import java.util.List;
  * @Description:
  * @Date: Create in 17:56 2018/8/4
  * @Modified By:
+ * @unignore
  */
 public class Friend implements Serializable{
     private static final long serialVersionUID = -1510197852310149126L;

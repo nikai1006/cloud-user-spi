@@ -11,6 +11,7 @@ import java.io.Serializable;
  * @version 1.0.0
  * @date 2023/2/28
  * @since 1.0.0
+ * @unignore
  */
 public class TaskDto extends BaseDto implements Serializable {
 

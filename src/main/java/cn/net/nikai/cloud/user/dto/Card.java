@@ -6,6 +6,7 @@ import java.io.Serializable;
  * cloud-user-spi cn.net.nikai.cloud.user.dto
  *
  * @author nikai
+ * @unignore
  */
 public class Card implements Serializable {
     private static final long serialVersionUID = 993491107111027592L;

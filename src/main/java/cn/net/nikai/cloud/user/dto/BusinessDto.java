@@ -2,6 +2,9 @@ package cn.net.nikai.cloud.user.dto;
 
 import java.io.Serializable;
 
+/**
+ * @unignore
+ */
 public class BusinessDto extends BaseDto implements Serializable {
 
     private static final long serialVersionUID = -2626628004543775313L;

@@ -12,6 +12,7 @@ import java.util.Date;
  * @version 1.0.0
  * @date 2023/2/28
  * @since 1.0.0
+ * @unignore
  */
 public class BaseDto implements Serializable {
 

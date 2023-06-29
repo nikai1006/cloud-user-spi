@@ -11,6 +11,7 @@ import java.math.BigDecimal;
  * @Description:
  * @Date: Create in 0:23 2018/12/21
  * @Modified By:
+ * @unignore
  */
 @ApiModel(description = "订单详情")
 public class Order {
