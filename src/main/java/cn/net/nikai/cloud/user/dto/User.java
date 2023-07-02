@@ -2,6 +2,9 @@ package cn.net.nikai.cloud.user.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
+import com.fasterxml.jackson.annotation.JsonView;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -21,6 +24,7 @@ public class User implements Serializable {
      *
      * @required TRUE
      */
+    @JsonView({String.class, Long.class})
     private Long id;
     /**
      * <pre>
@@ -30,10 +34,12 @@ public class User implements Serializable {
      * @min 2
      * @max 20
      */
+    @Type(String.class)
     private String name;
 
     /**
      * 生日
+     *
      * @required
      */
     @JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
@@ -45,6 +51,11 @@ public class User implements Serializable {
      * @min 18
      * @max 150
      */
+    @JsonSubTypes({
+        @Type(Integer.class),
+        @Type(Long.class),
+        @Type(Short.class)
+    })
     private Integer age;
 
     /**
