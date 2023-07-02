@@ -1,64 +1,85 @@
 package cn.net.nikai.cloud.user.dto;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiResponse;
+
 /**
- * 基础类型dto测试模型<br>
- *     Java中有八大基本类型，boolean、byte、short、int、long、float、double、char。 其包装类分别为Boolean、Byte、Integer、Long、Float、Double、Character
+ * 基础类型dto测试模型<br> Java中有八大基本类型，boolean、byte、short、int、long、float、double、char。 其包装类分别为Boolean、Byte、Integer、Long、Float、Double、Character
+ *
  * @author nikai
  * @version 1.0.0
  * @since 1.0.0
  */
+@ApiModel(value = "基础类型测试dto", description = "Java中有八大基本类型，boolean、byte、short、int、long、float、double、char。 其包装类分别为Boolean、Byte、Integer、Long、Float、Double、Character")
 public class LangTypeDto {
 
     /**
      * 主键
+     *
      * @primary
      */
+    @ApiModelProperty(value = "住建", name = "id", required = true)
     private long id;
 
     /**
      * 包装类型主键
      */
+    @ApiParam(value = "包装类型主键", name = "id", required = true, allowableValues = "range[100, 100000000)")
     private Long idW;
     /**
      * 年龄
+     *
      * @min 0
      * @deault 3
      */
+    @ApiModelProperty(value = "年龄", name = "age", required = true, notes = "swagger测试用属性描述：年龄", allowableValues = "range[1,200]", allowEmptyValue = false, hidden = false, dataType = "java.lang.Integer")
     private int age;
     /**
      * 包装类型年龄
+     *
      * @min 0
      * @deault 4
      */
+    @ApiParam(value = "包装类型年龄", name = "ageW", required = true, allowableValues = "2,3,4")
     private Integer ageW;
     /**
      * 是否工作
+     *
      * @default true
      */
     private boolean work;
     /**
      * 包装类型是否工作
+     *
      * @deault false
      */
     private Boolean workW;
     /**
      * 身高
+     *
      * @min 0
      */
     private double height;
     /**
      * 包装类型身高
+     *
      * @min 0
      */
     private Double heightW;
     /**
      * 朋友数量
+     *
      * @min 0
      */
     private short friends;
 
     /**
      * 包装类型朋友数量
+     *
      * @min 0
      */
     private Short friendsW;
