@@ -1,5 +1,6 @@
 package cn.net.nikai.cloud.user.dto;
 
+import io.swagger.annotations.ApiModel;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -13,11 +14,14 @@ import java.util.List;
  * @Modified By:
  * @unignore
  */
-public class Friend implements Serializable{
+@ApiModel(value = "朋友", description = "朋友实体定义", parent = User.class)
+public class Friend implements Serializable {
+
     private static final long serialVersionUID = -1510197852310149126L;
 
     /**
      * 编号
+     *
      * @required TRUE
      * @unique AUTO_INCREMENT
      */
@@ -46,6 +50,7 @@ public class Friend implements Serializable{
 
     /**
      * 个人邮箱
+     *
      * @email
      * @min 5
      * @max 200

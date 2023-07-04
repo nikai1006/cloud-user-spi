@@ -1,6 +1,8 @@
 package cn.net.nikai.cloud.user.dto;
 
+import io.swagger.annotations.ApiModel;
 import java.io.Serializable;
+import javax.validation.constraints.NotNull;
 
 /**
  * cloud-user-spi cn.net.nikai.cloud.user.dto
@@ -8,13 +10,17 @@ import java.io.Serializable;
  * @author nikai
  * @unignore
  */
+@ApiModel(value = "银行卡", description = "银行卡模型定义，详细定义了卡的全部内容", parent = User.class)
 public class Card implements Serializable {
+
     private static final long serialVersionUID = 993491107111027592L;
     /**
      * id
+     *
      * @required TRUE
      * @primary AUTO_INCREMENT
      */
+    @NotNull
     private Long id;
 
     /**
@@ -23,6 +29,7 @@ public class Card implements Serializable {
     private String name;
     /**
      * 电话号码
+     *
      * @min 8
      * @max 20
      */
@@ -106,12 +113,12 @@ public class Card implements Serializable {
     @Override
     public String toString() {
         return "Card{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", tel='" + tel + '\'' +
-                ", company='" + company + '\'' +
-                ", free=" + free +
-                ", type='" + type + '\'' +
-                '}';
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", tel='" + tel + '\'' +
+            ", company='" + company + '\'' +
+            ", free=" + free +
+            ", type='" + type + '\'' +
+            '}';
     }
 }

@@ -2,7 +2,12 @@ package cn.net.nikai.cloud.user.dto;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.Extension;
+import io.swagger.annotations.ExtensionProperty;
 import java.math.BigDecimal;
+import javax.validation.Payload;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Pattern.Flag;
 
 /**
  * cloud-user-spi cn.net.nikai.cloud.user.dto
@@ -16,13 +21,19 @@ import java.math.BigDecimal;
 @ApiModel(description = "订单详情")
 public class Order {
 
-    @ApiModelProperty(value = "订单编号",notes = "订单详细编码")
+    @ApiModelProperty(value = "订单编号", notes = "订单详细编码", extensions = {
+        @Extension(properties = {@ExtensionProperty(name = "passwd", value = "hello-nikai"),
+            @ExtensionProperty(name = "username", value = "admin")})})
     private Long id;
 
-    @ApiModelProperty(value = "类型",notes = "订单类型")
+    @ApiModelProperty(value = "类型", notes = "订单类型")
     private Integer type;
 
     @ApiModelProperty(value = "名称")
+    @Pattern(regexp = "^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(.[a-zA-Z0-9_-]+)+$", flags = {Flag.CANON_EQ,
+        Flag.CASE_INSENSITIVE, Flag.UNICODE_CASE}, message = "校验失败", groups = {String.class,
+        Character.class}, payload = {
+        Payload.class})
     private String name;
 
     @ApiModelProperty(value = "订单总价")

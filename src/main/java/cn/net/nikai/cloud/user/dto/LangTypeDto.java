@@ -6,6 +6,8 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.Extension;
+import io.swagger.annotations.ExtensionProperty;
 
 /**
  * 基础类型dto测试模型<br> Java中有八大基本类型，boolean、byte、short、int、long、float、double、char。 其包装类分别为Boolean、Byte、Integer、Long、Float、Double、Character
@@ -22,7 +24,9 @@ public class LangTypeDto {
      *
      * @primary
      */
-    @ApiModelProperty(value = "住建", name = "id", required = true)
+    @ApiModelProperty(value = "住建", name = "id", required = true, extensions = {
+        @Extension(properties = {@ExtensionProperty(name = "passwd", value = "hello-nikai"),
+            @ExtensionProperty(name = "username", value = "admin")})})
     private long id;
 
     /**

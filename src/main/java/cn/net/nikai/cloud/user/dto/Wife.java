@@ -2,10 +2,14 @@ package cn.net.nikai.cloud.user.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
+ * 妻子模型
  * @unignore
  */
+@ApiModel(value = "妻子", description = "每个用户都有妻子,除了女性", parent = User.class)
 public class Wife {
 
     /**

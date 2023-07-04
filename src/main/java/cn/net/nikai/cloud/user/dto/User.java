@@ -5,6 +5,13 @@ import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import com.fasterxml.jackson.annotation.JsonView;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.Example;
+import io.swagger.annotations.ExampleProperty;
+import io.swagger.annotations.Extension;
+import io.swagger.annotations.ExtensionProperty;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -16,6 +23,8 @@ import java.util.Map;
  * @author nikai
  * @unignore
  */
+@ApiModel(value = "测试用户模型", parent = Void.class, description = "该注解用于测试通用注解的解析", subTypes = {Long.class, Wife.class,
+    Order.class})
 public class User implements Serializable {
 
     private static final long serialVersionUID = 4944653477783174720L;
@@ -35,6 +44,9 @@ public class User implements Serializable {
      * @max 20
      */
     @Type(String.class)
+    @ApiModelProperty(extensions = {
+        @Extension(properties = {@ExtensionProperty(name = "passwd", value = "hello-nikai"),
+            @ExtensionProperty(name = "username", value = "admin")})})
     private String name;
 
     /**
@@ -71,20 +83,29 @@ public class User implements Serializable {
      * @min 0
      * @max 30
      */
+    @ApiModelProperty(value = "用户的很多卡", name = "cards")
     private List<Card> cards;
 
     /**
      * <pre>
      *     用户的朋友
      * </pre>
+     *
+     * @format key uuid
      */
+    @ApiModelProperty(value = "用户的朋友", name = "friends", example = "{hello}")
     private Map<String, Friend> friends;
 
     /**
      * 家人
      */
+    @ApiModelProperty(value = "用户的家人,用户属性", name = "family", example = "{world}", required = true)
     private List<User> family;
 
+    /**
+     * 老婆
+     */
+    @ApiModelProperty(value = "用户的老婆", name = "wife", readOnly = true)
     private Wife wife;
 
     public User() {
