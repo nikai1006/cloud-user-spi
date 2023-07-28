@@ -177,4 +177,68 @@ public class LangTypeDto {
     public void setHeightW(Double heightW) {
         this.heightW = heightW;
     }
+
+    public short getFriends() {
+        return friends;
+    }
+
+    public void setFriends(short friends) {
+        this.friends = friends;
+    }
+
+    public Short getFriendsW() {
+        return friendsW;
+    }
+
+    public void setFriendsW(Short friendsW) {
+        this.friendsW = friendsW;
+    }
+
+    public float getWeight() {
+        return weight;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
+
+    public Float getWeightW() {
+        return weightW;
+    }
+
+    public void setWeightW(Float weightW) {
+        this.weightW = weightW;
+    }
+
+    public char getFirtName() {
+        return firtName;
+    }
+
+    public void setFirtName(char firtName) {
+        this.firtName = firtName;
+    }
+
+    public Character getFirtNameW() {
+        return firtNameW;
+    }
+
+    public void setFirtNameW(Character firtNameW) {
+        this.firtNameW = firtNameW;
+    }
+
+    public byte getMemory() {
+        return memory;
+    }
+
+    public void setMemory(byte memory) {
+        this.memory = memory;
+    }
+
+    public Byte getMemeoryW() {
+        return memeoryW;
+    }
+
+    public void setMemeoryW(Byte memeoryW) {
+        this.memeoryW = memeoryW;
+    }
 }
