@@ -1,50 +1,61 @@
 package cn.net.nikai.cloud.user.annotation;
 
 import io.swagger.annotations.Example;
+import io.swagger.annotations.ExampleProperty;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
+@Target({ElementType.PARAMETER, ElementType.METHOD, ElementType.FIELD})
+@Retention(RetentionPolicy.RUNTIME)
 public @interface AllType {
 
-    String stringType();
+    String stringType() default "";
 
-    int intType();
+    int intType() default 0;
 
-    long longType();
+    long longType() default 0;
 
-    short shortType();
+    short shortType() default 0;
 
-    double doubleType();
+    double doubleType() default 0;
 
-    float floatType();
+    float floatType() default 0;
 
-    char charType();
+    char charType() default '0';
 
-    byte byteType();
+    byte byteType() default 0;
 
-    boolean booleanType();
+    boolean booleanType() default false;
 
-    Class classType();
+    Class classType() default Void.class;
 
-    Example antType();
+    Example antType() default @Example(value = @ExampleProperty(mediaType = "", value = ""));
 
-    String[] stringTypes();
+    Sex enumType() default Sex.GIRL;
 
-    int[] intTypes();
+    String[] stringTypes() default {};
 
-    long[] longTypes();
+    int[] intTypes() default {};
 
-    short[] shortTypes();
+    long[] longTypes() default {};
 
-    double[] doubleTypes();
+    short[] shortTypes() default {};
 
-    float[] floatTypes();
+    double[] doubleTypes() default {};
 
-    char[] charTypes();
+    float[] floatTypes() default {};
 
-    byte[] byteTypes();
+    char[] charTypes() default {};
 
-    boolean[] booleanTypes();
+    byte[] byteTypes() default {};
 
-    Class[] classTypes();
+    boolean[] booleanTypes() default {};
 
-    Example[] antTypes();
+    Class[] classTypes() default {};
+
+    Example[] antTypes() default {};
+
+    Sex[] enumTypes() default {};
 }

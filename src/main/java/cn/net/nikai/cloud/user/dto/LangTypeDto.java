@@ -1,11 +1,15 @@
 package cn.net.nikai.cloud.user.dto;
 
+import cn.net.nikai.cloud.user.annotation.AllType;
+import cn.net.nikai.cloud.user.annotation.Sex;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.Example;
+import io.swagger.annotations.ExampleProperty;
 import io.swagger.annotations.Extension;
 import io.swagger.annotations.ExtensionProperty;
 
@@ -55,12 +59,18 @@ public class LangTypeDto {
      *
      * @default true
      */
+    @AllType(stringType = "字符串类型", intType = 1,
+        longType = 1L, shortType = 1, doubleType = 1.0, floatType = 1, charType = '1',
+        byteType = 1, booleanType = true, classType = BaseDto.class,
+        antType = @Example(value = @ExampleProperty(mediaType = "json", value = "{}")),
+        enumType = Sex.BOY)
     private boolean work;
     /**
      * 包装类型是否工作
      *
      * @deault false
      */
+    @ApiParam
     private Boolean workW;
     /**
      * 身高
