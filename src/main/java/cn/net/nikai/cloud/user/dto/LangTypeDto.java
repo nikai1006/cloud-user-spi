@@ -48,7 +48,7 @@ public class LangTypeDto {
      * @min 0
      * @deault 4
      */
-    @ApiParam(value = "包装类型年龄", name = "ageW", required = true, allowableValues = "2,3,4")
+    @ApiParam(value = "包装类型年龄", name = "ageW", required = false, allowableValues = "2,3,4")
     private Integer ageW;
     /**
      * 是否工作
