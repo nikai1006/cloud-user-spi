@@ -59,11 +59,24 @@ public class LangTypeDto {
      *
      * @default true
      */
-    @AllType(stringType = "字符串类型", intType = 1,
-        longType = 1L, shortType = 1, doubleType = 1.0, floatType = 1, charType = '1',
-        byteType = 1, booleanType = true, classType = BaseDto.class,
+    @AllType(stringType = "字符串类型",
+        intType = 1,
+        longType = 1L, shortType = 1, doubleType = 1.0, floatType = 1, charType = '1', byteType = 1, booleanType = true, classType = BaseDto.class,
         antType = @Example(value = @ExampleProperty(mediaType = "json", value = "{}")),
-        enumType = Sex.BOY)
+        enumType = Sex.BOY,
+        stringTypes = {"hello", "world"},
+        intTypes = {0, 1},
+        longTypes = {0L, 1L},
+        shortTypes = {0, 1},
+        doubleTypes = {1.0, 2.1},
+        floatTypes = {1.1f, 1.2f},
+        charTypes = {'a', 'A'},
+        byteTypes = {0, 1},
+        booleanTypes = {true, false},
+        classTypes = {BaseDto.class, User.class},
+        antTypes = {@Example(value = @ExampleProperty(mediaType = "application/json", value = "{}")),
+            @Example(value = @ExampleProperty(mediaType = "application/xml", value = ""))},
+        enumTypes = {Sex.BOY, Sex.GIRL})
     private boolean work;
     /**
      * 包装类型是否工作
